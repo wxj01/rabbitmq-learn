@@ -1,3 +1,10 @@
+#学习的博客及文章
+~~~text
+https://blog.csdn.net/qq_35387940/article/details/100514134
+https://blog.csdn.net/qq_34775355/article/details/108305396
+~~~
+
+
 ~~~markdown
 
 ### 访问 http://localhost:8021/sendDirectMessage 
@@ -70,4 +77,14 @@ at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.jav
 at java.lang.Thread.run(Thread.java:748) [na:1.8.0_131]
 
 
+~~~
+
+## linux 安装 rabbitmq 好费劲 ，于是在docker 上装了一个 rabbitmq
+~~~shell
+docker search rabbitmq
+docker pull rabbitmq
+docker run -d --hostname my-rabbit --name rabbit -p 15672:15672 -p 5672:5672 rabbitmq
+docker ps 
+docker exec -it 镜像ID /bin/bash
+rabbitmq-plugins enable rabbitmq_management
 ~~~
