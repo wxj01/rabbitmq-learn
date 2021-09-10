@@ -77,6 +77,13 @@ public class SendMessageController {
         return "ok";
     }
 
+    /**
+     * @description:  消息推送到server，但是在server里找不到交换机
+     * @param: * @param:
+     * @return: java.lang.String
+     * @author wangxinjian
+     * @date: 2021/9/10 0010 21:16
+     */
     @GetMapping("/TestMessageAck")
     public String TestMessageAck() {
         String messageId = String.valueOf(UUID.randomUUID());
@@ -90,6 +97,13 @@ public class SendMessageController {
         return "ok";
     }
 
+    /** 
+     * @description:  消息推送到server，找到交换机了，但是没找到队列
+     * @param: * @param:  
+     * @return: java.lang.String 
+     * @author wangxinjian
+     * @date: 2021/9/10 0010 21:17
+     */ 
     @GetMapping("/TestMessageAck2")
     public String TestMessageAck2() {
         String messageId = String.valueOf(UUID.randomUUID());

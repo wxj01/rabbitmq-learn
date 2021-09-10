@@ -14,7 +14,7 @@ spring:
     username: guest
     password: guest
     #虚拟host 可以不设置,使用server默认host
-#    virtual-host: JCcccHost
+#    virtual-host: my-rabbit
 
     #消息确认配置项
 
