@@ -22,3 +22,43 @@ spring:
     publisher-confirm-type: correlated
     #确认消息已发送到队列(Queue)
     publisher-returns: true
+
+#    2021年9月22日09:51:33
+    template:
+      # 必须设置成true 消息路由失败通知监听者，false 将消息丢弃
+      mandatory: true
+      listener:
+        simple:
+          # 每次从RabbitMQ获取的消息数量
+          prefetch: 1
+          default-requeue-rejected: false
+          # 每个队列启动的消费者数量
+          concurrency: 1
+          # 每个队列最大的消费者数量
+          max-concurrency: 1
+          # 签收模式为手动签收-那么需要在代码中手动ACK
+          acknowledge-mode: manual
+
+#邮件队列
+email:
+  queue:
+    name: demo.email
+
+#邮件交换器名称
+exchange:
+  name: demoTopicExchange
+
+#死信队列
+dead:
+  letter:
+    queue:
+      name: demo.dead.letter
+    exchange:
+      name: demoDeadLetterTopicExchange
+
+#延时队列
+delay:
+  queue:
+    name: demo.delay
+  exchange:
+    name: demoDelayTopicExchange
