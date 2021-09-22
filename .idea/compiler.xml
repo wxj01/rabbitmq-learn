@@ -9,9 +9,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="rabbitmq-provider" />
         <module name="rabbitmq-consumer" />
+        <module name="rabbitmq-common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="rabbitmq-common" target="1.8" />
       <module name="rabbitmq-consumer" target="8" />
       <module name="rabbitmq-learn" target="1.8" />
       <module name="rabbitmq-provider" target="8" />
@@ -19,6 +21,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="rabbitmq-common" options="-parameters" />
       <module name="rabbitmq-consumer" options="-parameters" />
       <module name="rabbitmq-learn" options="-parameters" />
       <module name="rabbitmq-provider" options="-parameters" />

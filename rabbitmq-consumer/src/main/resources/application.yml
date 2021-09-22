@@ -8,7 +8,8 @@ spring:
   #配置rabbitMq 服务器
   rabbitmq:
 #    host: 127.0.0.1
-    host: 192.168.181.128   #docker 中的
+#    host: 192.168.181.128   #docker 中的
+    host: 192.168.15.129   #docker 中的
     port: 5672
     username: guest
     password: guest

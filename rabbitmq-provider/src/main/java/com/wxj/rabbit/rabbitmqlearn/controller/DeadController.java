@@ -8,7 +8,6 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
 
 import javax.annotation.Resource;
 import java.util.UUID;
@@ -31,15 +30,15 @@ public class DeadController {
     private String topicExchange;
 
 //    @Scheduled(cron = "0 0/2 * * * ?")
-//    public void sendEmailMessage(){
-//        String msg = RandomUtil.randomString(8);
-//        JSONObject email=new JSONObject();
-//        email.put("content",msg);
-//        email.put("to","wxj@qq.com");
-//        CorrelationData correlationData=new CorrelationData(UUID.randomUUID().toString());
-//        rabbitTemplate.convertAndSend(topicExchange,"demo.email.x",email.toJSONString(),correlationData);
-//        log.info("---发送 email 消息---{}---messageId---{}",email,correlationData.getId());
-//    }
+    public void sendEmailMessage(){
+        String msg = RandomUtil.randomString(8);
+        JSONObject email=new JSONObject();
+        email.put("content",msg);
+        email.put("to","wxj@qq.com");
+        CorrelationData correlationData=new CorrelationData(UUID.randomUUID().toString());
+        rabbitTemplate.convertAndSend(topicExchange,"demo.email.x",email.toJSONString(),correlationData);
+        log.info("---发送 email 消息---{}---messageId---{}",email,correlationData.getId());
+    }
 
 
 

@@ -95,7 +95,6 @@ public class RabbitConfig {
 
     @Bean
     Binding bindingDelayQueue() {
-//        return BindingBuilder.bind(delayQueue()).to(delayExchange()).with(delayQueue+".#").noargs();
         return BindingBuilder.bind(delayQueue()).to(delayExchange()).with(delayQueue+".#").noargs();
     }
 

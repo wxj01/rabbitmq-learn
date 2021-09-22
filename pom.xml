@@ -6,6 +6,7 @@
     <modules>
         <module>rabbitmq-provider</module>
         <module>rabbitmq-consumer</module>
+        <module>rabbitmq-common</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

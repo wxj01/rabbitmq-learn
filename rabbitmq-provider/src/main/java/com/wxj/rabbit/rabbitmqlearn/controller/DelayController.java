@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
 
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.TimeUnit;
@@ -35,7 +34,7 @@ public class DelayController {
     @Value("${delay.exchange.name}")
     private String delayTopicExchange;
 
-    @Scheduled(cron = "0 0/1 * * * ?")
+//    @Scheduled(cron = "0 0/1 * * * ?")
     public void sendDelayOrderMessage() throws Exception{
 
         //订单号 id实际是保存订单后返回的，这里用uuid代替
